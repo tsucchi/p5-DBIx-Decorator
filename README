@@ -1,16 +1,27 @@
 NAME
-    DBIx::Decorator -
+    DBIx::Decorator - extensible DBI wrapper using Decorator pattern
 
 SYNOPSIS
       use DBIx::Decorator;
+      use DBI;
+      use DBIx::Decorator::TransactionManager;
+      my $dbh = DBIx::Decorator::TransactionManager->new(DBI->connect(...));
+      my $txn = $wrapped_dbh->txn_scope(); # got transaction object from wrapped dbh.
+      my $row = $wrapped_dbh->selectrow_hashref("SELECT * FROM employee WHERE id=?", undef, 123); #normal usage
 
 DESCRIPTION
     DBIx::Decorator is
+
+METHODS
+  $wrapped_dbh = DBIx::Decorator->new($dbh)
+    create instance. returns wrapped $dbh.
 
 AUTHOR
     Takuya Tsuchida <tsucchi {at} cpan.org>
 
 SEE ALSO
+    DBIx::Decorator::TransactionManager
+
 LICENSE
     This library is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.
