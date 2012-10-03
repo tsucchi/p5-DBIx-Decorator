@@ -6,7 +6,10 @@ readme_markdown_from 'lib/DBIx/Decorator.pm';
 readme_pod_from 'lib/DBIx/Decorator.pm';
 githubmeta;
 
-# requires '';
+requires 'DBI';
+requires 'DBIx::TransactionManager';
+test_requires 'DBD::Mock';
+test_requires 'Try::Tiny';
 
 tests 't/*.t';
 author_tests 'xt';
