@@ -8,8 +8,8 @@ DBIx::Decorator - extensible DBI wrapper using Decorator pattern
   use DBI;
   use DBIx::Decorator::TransactionManager;
   my $dbh = DBIx::Decorator::TransactionManager->new(DBI->connect(...));
-  my $txn = $wrapped_dbh->txn_scope(); # got transaction object from wrapped dbh.
-  my $row = $wrapped_dbh->selectrow_hashref("SELECT * FROM employee WHERE id=?", undef, 123); #normal usage
+  my $txn = $dbh->txn_scope(); # got transaction object from wrapped dbh.
+  my $row = $dbh->selectrow_hashref("SELECT * FROM employee WHERE id=?", undef, 123); #normal usage
 
 
 =head1 DESCRIPTION
