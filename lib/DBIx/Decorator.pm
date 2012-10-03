@@ -1,8 +1,8 @@
 package DBIx::Decorator;
-use DBI;
-our @ISA = qw(DBI::db);
 use strict;
 use warnings;
+use DBI;
+our @ISA = qw(DBI::db);
 our $VERSION = '0.01';
 
 sub new {
