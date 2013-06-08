@@ -27,6 +27,12 @@ DBIx::Decorator - extensible DBI wrapper using Decorator pattern
   my $txn = $dbh->txn_scope(); # got transaction object from wrapped dbh.
   my $row = $dbh->selectrow_hashref("SELECT * FROM employee WHERE id=?", undef, 123); #normal usage
 
+=head1 IMPORTANT NOTICE
+
+This module is POC(Proof of Concept) module. I don't test and use this module in production environment.
+Please DO NOT USE. 
+
+If you want to manage DB connection and transaction, I recommend to use L<DBIx::Handler>.
 
 =head1 DESCRIPTION
 
